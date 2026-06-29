@@ -1,0 +1,40 @@
+import { useState } from "react";
+
+export default function AdminLogin() {
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
+
+  const handleLogin = () => {
+    if (user === "admin" && pass === "admin123") {
+      window.location.href = "/admin/dashboard";
+    } else {
+      alert("Invalid credentials");
+    }
+  };
+
+  return (
+    <div className="flex h-screen items-center justify-center bg-black text-white">
+      <div className="p-10 bg-gray-800 rounded">
+        <h1 className="text-xl mb-4">Admin Login</h1>
+        <input
+          type="text"
+          placeholder="Username"
+          className="block mb-2 p-2 w-full"
+          onChange={(e) => setUser(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          className="block mb-2 p-2 w-full"
+          onChange={(e) => setPass(e.target.value)}
+        />
+        <button
+          onClick={handleLogin}
+          className="bg-cyan-500 px-4 py-2 rounded text-black"
+        >
+          Login
+        </button>
+      </div>
+    </div>
+  );
+}
