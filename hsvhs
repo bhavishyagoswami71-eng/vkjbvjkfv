@@ -1,0 +1,19 @@
+import Ferrofluid from "../components/Ferrofluid";
+import RotatingText from "../components/RotatingText";
+import LogoLoop from "../components/LogoLoop";
+
+export default function Home() {
+  return (
+    <div>
+      <Ferrofluid />
+      <header className="relative z-10 text-center p-10">
+        <LogoLoop />
+        <RotatingText texts={['Tokyo Collection', 'Go with Culture']} />
+      </header>
+      <main className="relative z-10 p-10 text-white">
+        <h2 className="text-2xl mb-4">Featured Products</h2>
+        {/* Product grid placeholder */}
+      </main>
+    </div>
+  );
+}
